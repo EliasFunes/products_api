@@ -1,10 +1,16 @@
 package eliasfunes.productsapi.models;
 
 import jakarta.persistence.*;
-import lombok.*
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 
 @Entity
 @Table(name = "tipos")
@@ -18,11 +24,11 @@ public class Tipo {
     @Column(name = "nombre", unique = true, nullable = false)
     private String nombre;
 
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "creado_en", nullable = false)
     @CreatedDate
-    private LocalDateTime createdAt;
+    private LocalDateTime creadoEn;
 
-    @Column(name = "user", nullable = false)
-    private String user;
+    @Column(name = "usuario", nullable = false)
+    private String usuario;
 
 }
