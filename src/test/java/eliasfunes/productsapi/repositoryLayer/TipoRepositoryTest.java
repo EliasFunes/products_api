@@ -13,7 +13,8 @@ import java.time.LocalDateTime;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE) //TODO: ver como utilizar la db H2 para test o un schema especifico para test
+//**En caso de utilizar la mainDB para las pruebas (postgres) utilizar el anotation que sigue pero con la configuracion HIBERNATE_DDL_AUTO=create-drop*
+//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class TipoRepositoryTest {
 
     @Autowired
