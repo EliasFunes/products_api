@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Getter
@@ -24,9 +25,9 @@ public class Tipo {
     @Column(name = "nombre", unique = true, nullable = false)
     private String nombre;
 
-    @Column(name = "creado_en", nullable = false)
+    @Column(name = "creado_en", nullable = false, columnDefinition = "timestamp default now()")
     @CreatedDate
-    private LocalDateTime creadoEn;
+    private Instant createdDate;
 
     @Column(name = "usuario", nullable = false)
     private String usuario;
